@@ -4,6 +4,7 @@ import style from './ListItem.module.css';
 var FontAwesome = require('react-fontawesome')
 
 const listItem = (props) => {
+
     return (
         <div className={style.Box}>
             <li className={style.List}>{props.listText}

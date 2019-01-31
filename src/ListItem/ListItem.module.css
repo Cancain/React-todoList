@@ -9,17 +9,29 @@
 
 .Box {
     background: var(--color-primary-1);
-    width: max-content;
-    margin: 2px auto 2px auto;
+    margin: 2px 30px 2px auto;
     padding: 0.4rem;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.BoxCompleted {
+    background: var(--color-primary-1);
+    margin: 2px 30px 2px auto;
+    padding: 0.4rem;
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: line-through;
 }
 
 .Remove {
     margin: 0 0 0 0.5rem;
     cursor: pointer;
     color: red;
+    float: right;
 }
 
 .List {
     list-style: none;
+    text-align: start;
 }

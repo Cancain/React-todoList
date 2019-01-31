@@ -31,6 +31,14 @@ class App extends Component {
     this.setState({ listItems: items });
   }
 
+  keyDownHandler = (event) => {
+    if (event.key === 'Enter') {
+      console.log('keypress');
+      this.addItemHandler(this.state.text);
+    }
+
+  }
+
   render() {
     let data = this.state.listItems;
     return (
@@ -40,6 +48,7 @@ class App extends Component {
         <Input text={this.state.text}
           changed={this.textChangedHandler}
           clicked={() => this.addItemHandler(this.state.text)}
+          keyDown={this.keyDownHandler}
         />
         <ul>
           {data.map((text, index) => <ListItem
