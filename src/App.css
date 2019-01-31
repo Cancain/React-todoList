@@ -1,5 +1,21 @@
+
+:root {
+--color-primary-0: #522B72; 	/* Main Primary color */
+--color-primary-1: #9376AC; 
+--color-primary-2: #704C8F; 
+--color-primary-3: #371356; 
+--color-primary-4: #210439; 
+}
+
+
 .App {
   text-align: center;
+  border: 1px solid black;
+  margin: 10% auto 0 auto;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 7px;
+  background: var(--color-primary-4);
 }
 
 .App-logo {

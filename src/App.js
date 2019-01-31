@@ -1,25 +1,54 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Input from './Input/Input';
+import ListItem from './ListItem/ListItem';
 
 class App extends Component {
+
+  state = {
+    text: '',
+    listItems: []
+  }
+
+  addItemHandler = (text) => {
+    if (text !== '') {
+      const items = [...this.state.listItems]
+      items.push(text);
+      this.setState({
+        text: '',
+        listItems: items
+      })
+    }
+  }
+
+  textChangedHandler = (event) => {
+    this.setState({ text: event.target.value })
+  }
+
+  removeItemHandler = (index) => {
+    const items = [...this.state.listItems]
+    items.splice(index, 1);
+    this.setState({ listItems: items });
+  }
+
   render() {
+    let data = this.state.listItems;
     return (
+
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+        <Input text={this.state.text}
+          changed={this.textChangedHandler}
+          clicked={() => this.addItemHandler(this.state.text)}
+        />
+        <ul>
+          {data.map((text, index) => <ListItem
+            key={index}
+            listText={index + 1 + ': ' + text}
+            clickRemove={() => this.removeItemHandler(index)}
+          />)}
+        </ul>
+
       </div>
     );
   }

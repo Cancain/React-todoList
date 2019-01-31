@@ -1,0 +1,23 @@
+:root {
+    --color-primary-0: #522B72; 	/* Main Primary color */
+    --color-primary-1: #9376AC; 
+    --color-primary-2: #704C8F; 
+    --color-primary-3: #371356; 
+    --color-primary-4: #210439; 
+    }
+
+.Button {
+    border-radius: 7px;
+    border: 0;
+    padding: 0.4rem;
+    background: var(--color-primary-1);
+    margin: 0 0 0 0.3rem;
+    font-weight: bold;
+}
+
+.Input{
+    border-radius: 7px;
+    border: 0;
+    padding: 0.4rem;
+    background: var(--color-primary-1);
+}
